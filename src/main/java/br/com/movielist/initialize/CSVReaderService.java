@@ -1,4 +1,4 @@
-package br.com.teste.initialize;
+package br.com.movielist.initialize;
 
 import java.io.IOException;
 import java.io.InputStreamReader;

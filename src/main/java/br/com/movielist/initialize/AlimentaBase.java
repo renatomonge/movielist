@@ -1,4 +1,4 @@
-package br.com.teste.initialize;
+package br.com.movielist.initialize;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
