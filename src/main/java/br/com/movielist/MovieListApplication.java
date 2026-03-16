@@ -1,13 +1,13 @@
-package br.com.teste;
+package br.com.movielist;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TesteApplication {
+public class MovieListApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TesteApplication.class, args);
+		SpringApplication.run(MovieListApplication.class, args);
 	}
 
 }
