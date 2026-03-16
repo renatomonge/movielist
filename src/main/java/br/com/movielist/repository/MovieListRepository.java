@@ -19,8 +19,10 @@ public interface MovieListRepository extends JpaRepository<MovieList, Long> {
 			+ "    max(m.produce_year) as followingWin, "
 			+ "    max(m.produce_year) - min(m.produce_year) as intervalYear "
 			+ "from movielist m "
+			+ "where m.winner = true "
 			+ "group by m.producers "
 			+ "having intervalYear > 0 "
 			+ "order by 4 asc", nativeQuery = true)
 	List<ProducerDTO> findProducersWithOrderedInterval();
+
 }

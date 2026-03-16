@@ -1,5 +1,7 @@
 package br.com.movielist.entity;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,6 +29,9 @@ public class MovieList {
 
 	@Column(name = "winner", nullable = false)
 	private Boolean winner;
+	
+	@Column(name = "created_date", nullable = false)
+	private LocalDateTime createdDate;
 
 	public Long getId() {
 		return id;
@@ -74,6 +79,14 @@ public class MovieList {
 
 	public void setWinner(Boolean winner) {
 		this.winner = winner;
+	}
+	
+	public LocalDateTime getCreatedDate() {
+		return createdDate;
+	}
+	
+	public void setCreatedDate(LocalDateTime createdDate) {
+		this.createdDate = createdDate;
 	}
 
 }

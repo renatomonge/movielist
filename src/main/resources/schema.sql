@@ -4,5 +4,12 @@ CREATE TABLE IF NOT EXISTS movielist (
     studios VARCHAR(100) NOT NULL,
     producers VARCHAR(150) NOT NULL,
     produce_year INTEGER NOT NULL,
-    winner BOOLEAN NOT NULL
+    winner BOOLEAN NOT NULL,
+    created_date TIMESTAMP NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS import_file_control (
+	id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	hash_code VARCHAR(64) NOT NULL,
+	import_date TIMESTAMP NOT NULL
 );

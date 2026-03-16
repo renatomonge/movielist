@@ -1,4 +1,6 @@
-package br.com.movielist.initialize;
+package br.com.movielist.entity.builder;
+
+import java.time.LocalDateTime;
 
 import br.com.movielist.entity.MovieList;
 
@@ -55,6 +57,7 @@ public class MovieListBulder {
 		movieList.setProducers(producers);
 		movieList.setStudios(studios);
 		movieList.setWinner(winner);
+		movieList.setCreatedDate(LocalDateTime.now());
 		return movieList;
 	}
 	
