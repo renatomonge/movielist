@@ -31,16 +31,24 @@ public class CsvMovieListReader {
 	            	continue;
 	            }
 	            
-	            String[] producers = cells[PRODUCERS].split(",");
+	            String[] producersSeparated = cells[PRODUCERS].split(",");
 	            
-	            for (String producer : producers) {
-	            	MovieListBulder movieListBulder = new MovieListBulder()
-	    	                .year(cells[YEAR])
-	    	                .title(cells[TITLE])
-	    	                .studios(cells[STUDIOS])
-	    	                .producer(producer)
-	    	                .winner(cells.length > 4 ? cells[WINNER] : null);	           	            
-	    	            movieLists.add(movieListBulder.build());
+	            for (String producers : producersSeparated) {
+	            	String[] producersSeparetedWithAnd = producers.split(" and ");	            	         
+
+	            	for (String producer: producersSeparetedWithAnd) {
+	            		if (producer == null || producer.isBlank()) {
+	            			continue;
+	            		}
+	            		
+	            		MovieListBulder movieListBulder = new MovieListBulder()
+	            			.year(cells[YEAR])
+		    	            .title(cells[TITLE])
+		    	            .studios(cells[STUDIOS])
+		    	            .producer(producer)
+		    	            .winner(cells.length > 4 ? cells[WINNER] : null);	           	            
+		    	        movieLists.add(movieListBulder.build());
+	            	}	            		            	
 	            }	               	            
 			 }
 	    } catch (IOException e) {

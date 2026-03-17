@@ -39,10 +39,10 @@ public class MovieListContollerIntegrationTest extends BaseIntegrationTest {
             .andExpect(jsonPath("$.max[0].followingWin", is(2015)))
             //min
 			.andExpect(jsonPath("$.min", notNullValue()))
-			.andExpect(jsonPath("$.min[0].producer", is("Bo Derek")))
-            .andExpect(jsonPath("$.min[0].interval", is(6)))
-            .andExpect(jsonPath("$.min[0].previousWin", is(1984)))
-            .andExpect(jsonPath("$.min[0].followingWin", is(1990)));
+			.andExpect(jsonPath("$.min[0].producer", is("Joel Silver")))
+            .andExpect(jsonPath("$.min[0].interval", is(1)))
+            .andExpect(jsonPath("$.min[0].previousWin", is(1990)))
+            .andExpect(jsonPath("$.min[0].followingWin", is(1991)));
 	}
 	
 	@Test
