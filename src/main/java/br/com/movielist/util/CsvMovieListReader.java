@@ -1,4 +1,4 @@
-package br.com.movielist.initialize;
+package br.com.movielist.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -30,17 +30,21 @@ public class CsvMovieListReader {
 	            if (cells[0].equals("year")) {
 	            	continue;
 	            }
-	                
-	            MovieListBulder movieListBulder = new MovieListBulder()
-	                .year(cells[YEAR])
-	                .title(cells[TITLE])
-	                .studios(cells[STUDIOS])
-	                .producers(cells[PRODUCERS])
-	                .winner(cells.length > 4 ? cells[WINNER] : null);	           	            
-	            movieLists.add(movieListBulder.build());
+	            
+	            String[] producers = cells[PRODUCERS].split(",");
+	            
+	            for (String producer : producers) {
+	            	MovieListBulder movieListBulder = new MovieListBulder()
+	    	                .year(cells[YEAR])
+	    	                .title(cells[TITLE])
+	    	                .studios(cells[STUDIOS])
+	    	                .producer(producer)
+	    	                .winner(cells.length > 4 ? cells[WINNER] : null);	           	            
+	    	            movieLists.add(movieListBulder.build());
+	            }	               	            
 			 }
 	    } catch (IOException e) {
-	    	throw new RuntimeException("Erro ao corregar arquivo: " + e.getMessage());
+	    	throw new RuntimeException("Erro ao importar csv: " + e.getMessage());
 	    }
 		return movieLists;
 	}

@@ -21,8 +21,8 @@ public class MovieList {
 	@Column(name = "studios", nullable = false, length = 100)
 	private String studios;
 
-	@Column(name = "producers", nullable = false, length = 150)
-	private String producers;
+	@Column(name = "producer", nullable = false, length = 150)
+	private String producer;
 
 	@Column(name = "produce_year", nullable = false)
 	private Integer year;
@@ -57,12 +57,12 @@ public class MovieList {
 		this.studios = studios;
 	}
 
-	public String getProducers() {
-		return producers;
+	public String getProducer() {
+		return producer;
 	}
 
-	public void setProducers(String producers) {
-		this.producers = producers;
+	public void setProducer(String producer) {
+		this.producer = producer;
 	}
 
 	public Integer getYear() {

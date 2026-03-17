@@ -15,9 +15,9 @@ import br.com.movielist.dto.ProducerDTO;
 import br.com.movielist.dto.ProducersWithMaxMinIntervalDTO;
 import br.com.movielist.entity.ImportFileControl;
 import br.com.movielist.entity.MovieList;
-import br.com.movielist.initialize.CsvMovieListReader;
 import br.com.movielist.repository.ImportFileControlRepository;
 import br.com.movielist.repository.MovieListRepository;
+import br.com.movielist.util.CsvMovieListReader;
 import br.com.movielist.util.HashFileCalculator;
 
 @Service

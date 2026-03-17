@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS movielist (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
     studios VARCHAR(100) NOT NULL,
-    producers VARCHAR(150) NOT NULL,
+    producer VARCHAR(150) NOT NULL,
     produce_year INTEGER NOT NULL,
     winner BOOLEAN NOT NULL,
     created_date TIMESTAMP NOT NULL

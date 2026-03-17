@@ -9,7 +9,7 @@ public class MovieListBulder {
 	private int year;
 	private String title;
 	private String studios;
-	private String producers;
+	private String producer;
 	private boolean winner;
 	
 	public MovieListBulder year(String year) {
@@ -33,9 +33,9 @@ public class MovieListBulder {
 		return this;
 	}
 	
-	public MovieListBulder producers(String producers) {
-		if (producers != null && !producers.isBlank()) {
-			this.producers = producers.trim();
+	public MovieListBulder producer(String producer) {
+		if (producer != null && !producer.isBlank()) {
+			this.producer = producer.trim();
 		}
 		return this;
 	}
@@ -54,7 +54,7 @@ public class MovieListBulder {
 		
 		movieList.setYear(year);
 		movieList.setTitle(title);
-		movieList.setProducers(producers);
+		movieList.setProducer(producer);
 		movieList.setStudios(studios);
 		movieList.setWinner(winner);
 		movieList.setCreatedDate(LocalDateTime.now());
