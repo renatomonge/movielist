@@ -17,29 +17,34 @@ Com o projeto em execução, para testar o retorna da API, basta chamar o endpoi
 URL: http://localhost:8080/api/movielist/producers-min-max-interval  
 Método HTTP: GET
 
-<img width="1509" height="825" alt="image" src="https://github.com/user-attachments/assets/49eaef2f-5185-4f10-8233-fd8d52731a1b" />
+<img width="1516" height="763" alt="image" src="https://github.com/user-attachments/assets/ab5aea05-ee7a-42b3-92ac-0c2e08ebb49f" />
+
 Observação:  
 O resultado pode ser confirmado rodando a query:
 
 select   
-    m.producers as producer,  
+    m.producer,  
     min(m.produce_year) as previousWin,  
     max(m.produce_year) as followingWin,  
     max(m.produce_year) - min(m.produce_year) as intervalYear  
 from movielist m  
 where m.winner = true  
-group by m.producers  
+group by m.producer  
 having intervalYear > 0  
 order by 4 asc;  
-<img width="979" height="854" alt="image" src="https://github.com/user-attachments/assets/c79e5154-a6df-4519-9bed-76551316022d" />  
+
+<img width="866" height="798" alt="image" src="https://github.com/user-attachments/assets/36c9921c-5ad9-4f35-a5e3-6acd407785cb" />
+
 
 Ou rodando a query:  
-select producers, array_agg(produce_year order by produce_year) as  years from movielist  
+select producer, array_agg(produce_year order by produce_year) as  years from movielist  
 where winner = true   
-group by producers  
+group by producer  
 having cardinality(years) > 1  
 order by 2 asc;    
-<img width="901" height="657" alt="image" src="https://github.com/user-attachments/assets/0e1bf83e-2d37-4706-8885-a5181981b3ce" />
+
+<img width="879" height="679" alt="image" src="https://github.com/user-attachments/assets/aafe342b-c2c5-4e5a-870a-3540f5b94742" />
+
 
 <h3>Teste de integração</h3>
 
